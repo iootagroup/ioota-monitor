@@ -1,6 +1,6 @@
-var GrovePI = require('node-grovepi').GrovePI;
-var Commands = GrovePI.Commands;
-var Board = GrovePI.Board;
+var GrovePi = require('node-grovepi').GrovePi;
+var Commands = GrovePi.Commands;
+var Board = GrovePi.Board;
 
 var AirQualityAnalogSensor = GrovePi.sensors.AirQualityAnalog;
 
