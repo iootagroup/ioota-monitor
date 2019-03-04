@@ -16,5 +16,9 @@
     "grovepi"
   ],
   "author": "Iootagroup",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-grovepi": "^2.2.2",
+    "rest": "^2.0.0"
+  }
 }
