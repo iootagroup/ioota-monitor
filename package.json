@@ -18,7 +18,7 @@
   "author": "Iootagroup",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "node-grovepi": "^2.2.2",
-    "rest": "^2.0.0"
   }
 }
