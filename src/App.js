@@ -1,5 +1,7 @@
 const restClient = require('./RestClient.js')
 const chalk = require('chalk')
+const grove = require('./GrovePiReader.js')
+
 
 process.stdout.write('Starting application...\n')
 
@@ -31,6 +33,10 @@ function startMonitoring() {
     })
     restClient.postData(data)
     */
+
+    grove.listen((res) => {
+        console.log(res)
+    })
 
     // Retrieve data
     restClient.getData((res) => {

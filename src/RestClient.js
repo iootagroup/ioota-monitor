@@ -45,7 +45,6 @@ module.exports = {
         request.delete({ url: rest.url + rest.host.paths.sensordata, headers: rest.headers, json: { clear: true } }, (err, res, body) => {
             if (err) throw err
             return callback(body.message)
-            console.log(body.message)
         })
     }
 }

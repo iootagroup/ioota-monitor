@@ -1,10 +1,33 @@
-var GrovePi = require('node-grovepi').GrovePi;
-var Commands = GrovePi.Commands;
-var Board = GrovePi.board;
+let GrovePi = require('node-grovepi').GrovePi
+//var Commands = GrovePi.Commands
+let Board = GrovePi.board
 
-var AirQualityAnalogSensor = GrovePi.sensors.AirQualityAnalog;
+let AirQualityAnalogSensor = GrovePi.sensors.AirQualityAnalog
 
-var board = new Board({
+module.exports = {
+  listen: (callback) => {
+    let board = new Board(
+      {
+        debug: true,
+        onError: (err) => {
+          process.stdout.write(err)
+        },
+        onInit: (res) => {
+          if (res) {
+            let airQualitySensor = new AirQualityAnalogSensor(0)
+            airQualitySensor.on('change', (res) => {
+              return callback(res)
+            })
+            airQualitySensor.watch()
+          }
+        }
+      }
+    )
+    board.init()
+  }
+}
+/*
+let board = new Board({
   debug: true,
   onError: function(err) {
     console.log('Something wrong just happened')
@@ -23,5 +46,4 @@ var board = new Board({
     }
   }
 });
-
-board.init();
+*/
