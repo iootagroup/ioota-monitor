@@ -23,7 +23,7 @@ var board = new Board({
         
 
         console.log('RGB led Sensor (start watch)');
-        RGBLed.on('change', function(res) {
+        RGBLed.off('change', function(res) {
           console.log('RGB led onChange value=' + res)
         });
         
