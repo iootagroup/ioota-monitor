@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-let token = fs.readFileSync('./group4.jwt')
+let token = fs.readFileSync('./group4.jwt').replace(/\r?\n|\r/g, '')
 let host = {
     hostname: "http://health-safety.dev.api.kemppi.com",
     port: 8080,
@@ -13,7 +13,6 @@ let url =  `${host.hostname}:${host.port}`
 let headers = JSON.stringify({
         Authorization: 'Bearer ' + token
 })
-console.log( headers)
 module.exports = {
     host: host,
     url: url,
