@@ -12,7 +12,7 @@ var board = new Board({
       console.log(err);
     },
     onInit: function(res) {
-      if (!res) {
+      if (res) {
         console.log('GrovePi Version :: ' + board.version());
 
         var RGBLed = new ChainableRGBLedDigitalSensor(8,1);
@@ -20,9 +20,9 @@ var board = new Board({
         //RGBLed.Commands.chainbleRgbLedSetModulo(RGBLedcolor);
         //var RGBLedcolor = Commands.storeColor(0,255,0);
         //RGBLed.Commands.chainbleRgbLedSetModulo(RGBLedcolor);
-        
 
         console.log('RGB led Sensor (start watch)');
+        RGBLed.turnOff();
         RGBLed.off('change', function(res) {
           console.log('RGB led onChange value=' + res)
         });
