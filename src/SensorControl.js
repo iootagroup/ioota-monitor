@@ -37,6 +37,7 @@ var board = new Board({
         var temp = 0.75
         setInterval(function(){
           temp == 0.75 ? temp = 0 : temp = 0.75
+          console.log(temp)
           RGBLed.write(temp)
         },1000);
       }
