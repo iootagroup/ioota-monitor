@@ -11,7 +11,7 @@ let host = {
 }
 let url =  `${host.hostname}:${host.port}`
 let headers = {
-    'Authorization': 'Bearer ' + token
+    'Authorization': `Bearer ${token}`
 }
 
 module.exports = {
