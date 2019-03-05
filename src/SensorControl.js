@@ -15,9 +15,9 @@ var board = new Board({
       if (res) {
         console.log('GrovePi Version :: ' + board.version());
 
-        var RGBLed = new ChainableRGBLedDigitalSensor(7,1,"");
-        //var RGBLedcolor = RGBLed.GrovePi.commands.storeColor(0,255,0);
-        //RGBLed.GrovePi.commands.chainbleRgbLedSetModulo(RGBLedcolor);
+        var RGBLed = new ChainableRGBLedDigitalSensor(8,1);
+        var RGBLedcolor = RGBLed.Commands.storeColor(0,255,0);
+        RGBLed.Commands.chainbleRgbLedSetModulo(RGBLedcolor);
         //var RGBLedcolor = Commands.storeColor(0,255,0);
         //RGBLed.Commands.chainbleRgbLedSetModulo(RGBLedcolor);
         
@@ -25,7 +25,7 @@ var board = new Board({
         RGBLed.on('change', function(res) {
           console.log('RGB led onChange value=' + res)
         })
-        RGBLed.watch(1000);
+        RGBLed.watch();
       }
     }
   })
