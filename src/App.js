@@ -41,19 +41,9 @@ function startMonitoring() {
             value: res
         }]
 
-        switch(res) {
-            case res >= 35 && res < 800:
-                console.log(chalk.yellow(' Alert '))
-                break
-            case res >= 800 && res < 12800:
-                console.log(chalk.red(' Alert '))
-                break
-            case res >= 12800:
-                console.log(chalk.red(' Alert '))
-                break
-            default:
-                break
-        }
+        if (res >= 35 && res < 800) console.log(chalk.yellow(' Alert '))
+        if (res >= 800 && res < 12800) console.log(chalk.red(' Alert '))
+        if (res >= 12800) console.log(chalk.red(' Alert '))
 
         //console.log(JSON.stringify(field))
         restClient.postData(field)
