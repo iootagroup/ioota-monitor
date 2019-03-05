@@ -1,6 +1,8 @@
 const fs = require('fs')
 
-let token = fs.readFileSync('./group4.jwt')
+const path = require('path')
+
+let token = fs.readFileSync('/group4.jwt')
 token = token.toString().replace(/\r?\n|\r/g, '')
 let host = {
     hostname: "http://health-safety.dev.api.kemppi.com",

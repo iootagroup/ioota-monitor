@@ -1,5 +1,7 @@
 const request = require('request')
 const fs = require('fs')
+const path = require('path')
+
 const rest = require('./RestClient.config.js')
 const { Query } = require('./Query.js')
 

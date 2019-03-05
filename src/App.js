@@ -1,6 +1,9 @@
 const restClient = require('./RestClient.js')
 const chalk = require('chalk')
-const grove = require('./GrovePiReader.js')
+const path = require('path')
+
+const grove = require(__dirname + '/GrovePiReader.js')
+
 
 var GrovePi = require('node-grovepi').GrovePi
 
