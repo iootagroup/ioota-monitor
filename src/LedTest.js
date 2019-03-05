@@ -49,6 +49,7 @@ function start() {
 function onExit(err) {
   console.log('ending')
   toggle.status == 0;
+  led.turnOff();
   console.log('status changed to 0') 
   board.close()
   process.removeAllListeners()
