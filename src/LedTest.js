@@ -1,7 +1,7 @@
 var GrovePi = require('node-grovepi').GrovePi
 
 // put led in port D7 
-var led = new GrovePi.sensors.DigitalOutput(7);
+var led = new GrovePi.sensors.DigitalOutput(8);
 
 // status will tell us if the led is on or off
 var status = 0;
