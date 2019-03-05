@@ -35,11 +35,11 @@ function startMonitoring() {
     */
 
     grove.listen((res) => {
-        let field = {
+        let field = [{
             timestamp: new Date(),
             type: 'airquality',
             value: res
-        }
+        }]
         //console.log(JSON.stringify(field))
         restClient.postData(field)
     })
