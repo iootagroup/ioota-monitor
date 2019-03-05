@@ -30,9 +30,9 @@ var board = new Board({
 
         RGBLed.watch(1000);
         console.log("x");
-        var temp = 100
+        var temp = 99
         setInterval(function(){
-          temp == 100 ? temp = 0 : temp = 100
+          temp == 99 ? temp = 0 : temp = 99
           RGBLed.write(temp)
         },1000);
       }
