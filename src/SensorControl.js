@@ -15,9 +15,9 @@ var board = new Board({
       if (res) {
         console.log('GrovePi Version :: ' + board.version());
 
-        var RGBLed = new ChainableRGBLedDigitalSensor(8,1);
-        var RGBLedcolor = RGBLed.Commands.storeColor(0,255,0);
-        RGBLed.Commands.chainbleRgbLedSetModulo(RGBLedcolor);
+        var RGBLed = new ChainableRGBLedDigitalSensor(8,1,Commands.storeColor(0,255,0));
+        //var RGBLedcolor = RGBLed.Commands.storeColor(0,255,0);
+        //RGBLed.Commands.chainbleRgbLedSetModulo(RGBLedcolor);
         //var RGBLedcolor = Commands.storeColor(0,255,0);
         //RGBLed.Commands.chainbleRgbLedSetModulo(RGBLedcolor);
         
