@@ -2,7 +2,9 @@ const restClient = require('./RestClient.js')
 const chalk = require('chalk')
 const grove = require('./GrovePiReader.js')
 
-const ledc = require('./LedTest.js')
+var GrovePi = require('node-grovepi').GrovePi
+
+//const ledc = require('./LedTest.js')
 
 process.stdout.write('Starting application...\n')
 
@@ -26,6 +28,17 @@ for (var i = 0; i < 10; i++) {
 */ 
 
 let alarmStatus = false
+var led = new GrovePi.sensors.DigitalOutput(7);
+function toggle() {
+    if (alarmStatus == false){
+        led.turnOff();
+        alarmStatus = true;
+    }
+    else {
+        led.turnOn();
+        alarmStatus = false;
+    }
+}
 
 function startMonitoring() {
     process.stdout.write(`Status:\t\t ${chalk.bgGreen(' Online ')}`)
@@ -46,7 +59,7 @@ function startMonitoring() {
 
         if (res >= 35 && res < 99) {
             if(alarmStatus) {
-                ledc.onExit()
+                led.turnOff()
                 alarmStatus = false
             }
             
@@ -54,14 +67,15 @@ function startMonitoring() {
         }
         if (res >= 100 && res < 12800) {
             if(!alarmStatus) {
-                ledc.start()
+                led.turnOn();
+                //ledc.start()
                 alarmStatus = true
             }
             console.log(chalk.red(' Alert '))
         }
         if (res >= 12800) {
             if(!alarmStatus) {
-                ledc.start()
+                led.turnOn();
                 alarmStatus = true
             }
             console.log(chalk.red(' Alert '))

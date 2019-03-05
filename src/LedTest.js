@@ -11,12 +11,10 @@ var board;
 function toggle() {
 
     if (status == 0){
-        console.log("toggle off");
         led.turnOff();
         status = 1;
     }
     else {
-        console.log("toggle on");
         led.turnOn();
         status = 0;
     }
@@ -53,7 +51,6 @@ function onExit(err) {
   console.log('status changed to 0') 
   board.close()
   process.removeAllListeners()
-  process.exit()
   if (typeof err != 'undefined')
     console.log(err)
 }
