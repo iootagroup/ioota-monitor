@@ -24,7 +24,8 @@ var board = new Board({
         RGBLed.on('change', function(res) {
           console.log('RGB led onChange value=' + res)
         })
-        RGBLed.watch();
+        //RGBLed.watch();
+        RGBLed.stopWatch();
       }
     }
   })
