@@ -2,13 +2,7 @@ const restClient = require('./RestClient.js')
 const chalk = require('chalk')
 const grove = require('./GrovePiReader.js')
 
-const sys = require('util')
-const spawn = require('child_process.spawn')
-const dummy = spawn('python', ['sgb30sensor.py'])
-
-dummy.stdout.on('data', (data) => {
-    console.log(data.toString())
-})
+const ledc = require('./LedTest.js')
 
 process.stdout.write('Starting application...\n')
 
@@ -31,6 +25,8 @@ for (var i = 0; i < 10; i++) {
 }
 */ 
 
+let alarmStatus = false
+
 function startMonitoring() {
     process.stdout.write(`Status:\t\t ${chalk.bgGreen(' Online ')}`)
     /*
@@ -48,9 +44,28 @@ function startMonitoring() {
             value: res
         }]
 
-        if (res >= 35 && res < 800) console.log(chalk.yellow(' Alert '))
-        if (res >= 800 && res < 12800) console.log(chalk.red(' Alert '))
-        if (res >= 12800) console.log(chalk.red(' Alert '))
+        if (res >= 35 && res < 99) {
+            if(alarmStatus) {
+                ledc.onExit()
+                alarmStatus = false
+            }
+            
+            console.log(chalk.yellow(' Alert '))
+        }
+        if (res >= 100 && res < 12800) {
+            if(!alarmStatus) {
+                ledc.start()
+                alarmStatus = true
+            }
+            console.log(chalk.red(' Alert '))
+        }
+        if (res >= 12800) {
+            if(!alarmStatus) {
+                ledc.start()
+                alarmStatus = true
+            }
+            console.log(chalk.red(' Alert '))
+        }
 
         //console.log(JSON.stringify(field))
         restClient.postData(field)
