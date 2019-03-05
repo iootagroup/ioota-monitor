@@ -29,11 +29,14 @@ var board = new Board({
         });
 
         RGBLed.watch(1000);
+
+
+
         console.log("x");
-        var temp = 99
+        var temp = 1
         setInterval(function(){
-          temp == 99 ? temp = 0 : temp = 99
-          RGBLed.write(temp)
+          temp == 1 ? temp = 0 : temp = 1
+          RGBLed.write(8, temp)
         },1000);
       }
     }
