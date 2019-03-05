@@ -18,7 +18,7 @@ module.exports = {
             airQualitySensor.on('change', (res) => {
               return callback(res)
             })
-            airQualitySensor.watch()
+            airQualitySensor.watch(1000)
           }
         }
       }
