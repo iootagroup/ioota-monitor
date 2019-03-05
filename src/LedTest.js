@@ -62,3 +62,8 @@ function onExit(err) {
 start()
 // catches ctrl+c event
 process.on('SIGINT', onExit)
+
+module.exports = { 
+    start:start, 
+    onExit:onExit
+};
