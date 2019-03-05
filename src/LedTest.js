@@ -48,6 +48,8 @@ function start() {
 // close the board and clean up 
 function onExit(err) {
   console.log('ending')
+  toggle.status == 0;
+  console.log('status changed to 0') 
   board.close()
   process.removeAllListeners()
   process.exit()
