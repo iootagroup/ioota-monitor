@@ -34,11 +34,11 @@ module.exports = {
         })
     },
     postData: (data) => {
-        console.log({headers: {'Authorization': 'Bearer ' + rest.token}})
-        request.post({url: 'http://health-safety.dev.api.kemppi.com:8080/api/sensordata', headers: {'Authorization': 'Bearer ' + rest.token }, json: data}, (err, res, body) => {
+        process.stdout.write(`Sending POST request with payload ${data}\n`)
+        request.post({url: rest.url, headers: {'Authorization': 'Bearer ' + rest.token }, json: data}, (err, res, body) => {
         //request.post({ url: rest.url + rest.host.paths.sensordata, d:{}, json: data }, (err, res,body) => {
             if (err) throw err
-            console.log(body)
+            console.log('Response: ' + body)
         })
     }, 
     deleteData: (callback) => {
