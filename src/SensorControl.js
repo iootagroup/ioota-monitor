@@ -16,8 +16,8 @@ var board = new Board({
         console.log('GrovePi Version :: ' + board.version());
 
         var RGBLed = new ChainableRGBLedDigitalSensor(7, 1);
-        var RGBLedcolor = RGBLed.GrovePi.commands.storeColor(0,255,0);
-        RGBLed.GrovePi.commands.chainbleRgbLedSetModulo(RGBLedcolor);
+        //var RGBLedcolor = RGBLed.GrovePi.commands.storeColor(0,255,0);
+        //RGBLed.GrovePi.commands.chainbleRgbLedSetModulo(RGBLedcolor);
         //var RGBLedcolor = Commands.storeColor(0,255,0);
         //RGBLed.Commands.chainbleRgbLedSetModulo(RGBLedcolor);
         console.log('RGB led Sensor (start watch)');
