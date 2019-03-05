@@ -5,22 +5,34 @@ process.stdout.write('Starting application...\n')
 
 // Check the status of the API service
 restClient.getStatus((status, timestamp) => {
-    console.log(chalk.green(`Received a response from ${chalk.white('Hostname')}`))
-    status == 'Online' ? startMonitoring() : console.log("Service " + chalk.bgRed('offline'))
+    process.stdout.write(chalk.green(`Received a response from ${chalk.white('Hostname')} \n`))
+    status == 'Online' ? startMonitoring() : process.stdout.write(`Service ${chalk.bgRed('offline')}\n`)
 })
 
-let data = [{
-    'timestamp': '2019-04-03T18:12:41Z',
-    'type': 'SENSORNAME',
-    'value': 52.5
-}]
+/*
+// Generate sample data
+let data = []
+for (var i = 0; i < 10; i++) {
+    let test = {
+        'timestamp': `2019-04-0${i}T00:00:00Z`,
+        'type': 'test',
+        'value': Math.random() * 30
+    }
+    data.push(test)
+}
+*/ 
 
 function startMonitoring() {
-    console.log("Status:\t\t" + chalk.bgGreen(' Online '))
-    //restClient.postData(data)
+    process.stdout.write(`Status:\t\t ${chalk.bgGreen(' Online ')}`)
+    /*
+    Tests
     restClient.deleteData((res) => {
         console.warn(chalk.yellow(res))
     })
+    restClient.postData(data)
+    */
+
+    // Retrieve data
     restClient.getData((res) => {
         console.log(res)
     })
