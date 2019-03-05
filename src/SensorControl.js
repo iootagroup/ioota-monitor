@@ -27,8 +27,14 @@ var board = new Board({
 
           console.log('RGB led onChange value=' + res)
         });
-        
+
         RGBLed.watch(1000);
+        console.log("x");
+        var temp = 1
+        setInterval(function(){
+          temp == 1 ? temp = 0 : temp = 1
+          RGBLed.write(temp)
+        },1000);
       }
     }
   })
