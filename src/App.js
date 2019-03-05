@@ -40,7 +40,7 @@ function startMonitoring() {
             type: 'airquality',
             value: res
         }
-        console.log(JSON.stringify(field))
+        //console.log(JSON.stringify(field))
         restClient.postData(JSON.stringify(field))
     })
 
