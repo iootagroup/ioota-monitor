@@ -57,7 +57,7 @@ function startMonitoring() {
             value: res
         }]
 
-        if (res >= 35 && res < 99) {
+        if (res >= 35 && res < 69) {
             if(alarmStatus) {
                 led.turnOff()
                 alarmStatus = false
@@ -65,7 +65,7 @@ function startMonitoring() {
             
             console.log(chalk.yellow(' Alert '))
         }
-        if (res >= 100 && res < 12800) {
+        if (res >= 70 && res < 12800) {
             if(!alarmStatus) {
                 led.turnOn();
                 //ledc.start()
