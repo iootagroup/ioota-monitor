@@ -24,13 +24,12 @@ var board = new Board({
         console.log('RGB led Sensor (start watch)');
         RGBLed.on('change', function(res) {
           console.log('RGB led onChange value=' + res)
-        })
-        RGBLed.chainableRgbLedTest();
+        });
+        RGBLed.off();
       }
     }
   })
-  board.chainableRgbLedTest();
-  //board.init();
+  board.init();
 //module.exports = {
 //    functionName: ChainableRGBLedDigitalSensor
 
