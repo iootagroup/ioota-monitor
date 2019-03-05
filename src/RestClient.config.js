@@ -11,8 +11,8 @@ let host = {
 }
 let url =  `${host.hostname}:${host.port}`
 let headers = JSON.stringify({
-    'headers': {
-        'Authorization': 'Bearer ' + token
+    headers: {
+        Authorization: 'Bearer ' + token
     }
 })
 
