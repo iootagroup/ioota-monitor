@@ -35,7 +35,12 @@ function startMonitoring() {
     */
 
     grove.listen((res) => {
-        console.log(res)
+        let field = {
+            timestamp: new Date(),
+            type: 'airquality',
+            value: res
+        }
+        console.log(JSON.stringify(field))
     })
 
     // Retrieve data
