@@ -11,11 +11,9 @@ let host = {
 }
 let url =  `${host.hostname}:${host.port}`
 let headers = JSON.stringify({
-    headers: {
         Authorization: 'Bearer ' + token
-    }
 })
-
+console.log( headers)
 module.exports = {
     host: host,
     url: url,
