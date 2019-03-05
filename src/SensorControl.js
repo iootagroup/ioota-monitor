@@ -32,12 +32,11 @@ var board = new Board({
 
         RGBLed.watch(1000);
 
-
-        RGBLed.commands.ChainableRGBLedDInit()
+        //RGBLed.commands.ChainableRGBLedDInit()
         console.log("x");
-        var temp = 1
+        var temp = 0.75
         setInterval(function(){
-          temp == 1 ? temp = 0 : temp = 1
+          temp == 0.75 ? temp = 0 : temp = 0.75
           RGBLed.write(temp)
         },1000);
       }
