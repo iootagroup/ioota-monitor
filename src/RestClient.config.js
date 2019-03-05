@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-let token = fs.readFileSync('./group4.jwt').replace(/\r?\n|\r/g, '')
+let token = fs.readFileSync('./group4.jwt')
 let host = {
     hostname: "http://health-safety.dev.api.kemppi.com",
     port: 8080,
