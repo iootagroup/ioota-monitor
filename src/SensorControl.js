@@ -22,7 +22,6 @@ var board = new Board({
         //RGBLed.Commands.chainbleRgbLedSetModulo(RGBLedcolor);
 
         console.log('RGB led Sensor (start watch)');
-        RGBLed.turnOff();
         RGBLed.off('change', function(res) {
           console.log('RGB led onChange value=' + res)
         });
