@@ -10,9 +10,11 @@ let host = {
     }
 }
 let url =  `${host.hostname}:${host.port}`
-let headers = {
-    'Authorization': `Bearer ${token}`
-}
+let headers = JSON.stringify({
+    'headers': {
+        'Authorization': 'Bearer ' + token
+    }
+})
 
 module.exports = {
     host: host,
