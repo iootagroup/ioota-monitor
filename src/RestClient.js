@@ -36,7 +36,7 @@ module.exports = {
     postData: (data) => {
         console.log({headers: {'Authorization': 'Bearer ' + rest.token}})
         //request.post({url: 'http://health-safety.dev.api.kemppi.com:8080/api/sensordata', headers: {'Authorization': 'Bearer ' + jwt }, json: data}, (err, res, body) => {
-        request.post({ url: rest.url + rest.host.paths.sensordata, , json: data }, (err, res,body) => {
+        request.post({ url: rest.url + rest.host.paths.sensordata, d:{}, json: data }, (err, res,body) => {
             if (err) throw err
             console.log(body)
         })
