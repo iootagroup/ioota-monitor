@@ -18,4 +18,5 @@ module.exports = {
     host: host,
     url: url,
     headers: headers,
+    token: token
 }
