@@ -2,13 +2,6 @@ const request = require('request')
 const fs = require('fs')
 const rest = require('./RestClient.config.js')
 const { Query } = require('./Query.js')
-const sys = require('util')
-const spawn = require('child_process.spawn')
-const dummy = spawn('python', ['sgb30sensor.py'])
-
-dummy.stdout.on('data', (data) => {
-    console.log(data.toString())
-})
 
 //let qfile = fs.readFileSync()
 let qConfig = {

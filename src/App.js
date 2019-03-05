@@ -2,6 +2,13 @@ const restClient = require('./RestClient.js')
 const chalk = require('chalk')
 const grove = require('./GrovePiReader.js')
 
+const sys = require('util')
+const spawn = require('child_process.spawn')spawn
+const dummy = spawn('python', ['sgb30sensor.py'])
+
+dummy.stdout.on('data', (data) => {
+    console.log(data.toString())
+})
 
 process.stdout.write('Starting application...\n')
 
