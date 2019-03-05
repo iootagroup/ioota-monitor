@@ -20,12 +20,12 @@ var board = new Board({
         //RGBLed.GrovePi.commands.chainbleRgbLedSetModulo(RGBLedcolor);
         //var RGBLedcolor = Commands.storeColor(0,255,0);
         //RGBLed.Commands.chainbleRgbLedSetModulo(RGBLedcolor);
+        var write = board.writeBytes(Commands.storeColor.concat([0, 255, 0]))
         console.log('RGB led Sensor (start watch)');
         RGBLed.on('change', function(res) {
           console.log('RGB led onChange value=' + res)
         })
-        //RGBLed.watch();
-        RGBLed.stopWatch();
+        RGBLed.watch();
       }
     }
   })
