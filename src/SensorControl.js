@@ -34,9 +34,9 @@ var board = new Board({
 
         //RGBLed.commands.ChainableRGBLedDInit()
         console.log("x");
-        var temp = 0.75
+        var temp = 1
         setInterval(function(){
-          temp == 0.75 ? temp = 0 : temp = 0.75
+          temp == 1 ? temp = 0 : temp = 1
           console.log(temp)
           RGBLed.write(temp)
         },1000);
