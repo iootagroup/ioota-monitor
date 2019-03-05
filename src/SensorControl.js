@@ -33,7 +33,7 @@ var board = new Board({
         RGBLed.watch(1000);
 
 
-        RGBLed.ChainableRGBLedDInit()
+        RGBLed.commands.ChainableRGBLedDInit()
         console.log("x");
         var temp = 1
         setInterval(function(){
