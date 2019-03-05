@@ -40,8 +40,24 @@ function startMonitoring() {
             type: 'airquality',
             value: res
         }]
+
+        switch(res) {
+            case res >= 35 && res < 800:
+                console.log(chalk.yellow(' Alert '))
+                break
+            case res >= 800 && res < 12800:
+                console.log(chalk.red(' Alert '))
+                break
+            case res >= 12800:
+                console.log(chalk.red(' Alert '))
+                break
+            default:
+                break
+        }
+
         //console.log(JSON.stringify(field))
         restClient.postData(field)
+
     })
 
     // Retrieve data
