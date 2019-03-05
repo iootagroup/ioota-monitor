@@ -41,7 +41,7 @@ function startMonitoring() {
             value: res
         }
         //console.log(JSON.stringify(field))
-        restClient.postData(JSON.stringify(field))
+        restClient.postData(field)
     })
 
     // Retrieve data
