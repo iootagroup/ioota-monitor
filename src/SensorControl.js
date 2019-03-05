@@ -29,8 +29,8 @@ var board = new Board({
       }
     }
   })
-
-  board.init();
+  board.chainableRgbLedTest();
+  //board.init();
 //module.exports = {
 //    functionName: ChainableRGBLedDigitalSensor
 
