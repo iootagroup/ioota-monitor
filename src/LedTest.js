@@ -1,4 +1,4 @@
-var GrovePi = require('../libs').GrovePi
+var GrovePi = require('node-grovepi').GrovePi
 
 // put led in port D7 
 var led = new GrovePi.sensors.DigitalOutput(7);
